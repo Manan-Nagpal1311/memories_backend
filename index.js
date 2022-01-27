@@ -8,7 +8,7 @@ import postRoutes from './routes/posts.js'
 
 app.use(cors(
     {
-        origin:['http://localhost:3000','https://loving-poincare-56ab69.netlify.app/'],
+        origin:['http://localhost:3000','https://loving-poincare-56ab69.netlify.app/','https://stupefied-joliot-47927c.netlify.app/'],
         credentials:true
     },
     )); 
