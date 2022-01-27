@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js'
 
 
-'mongodb+srv://MananNagpal:Manan2001@cluster0.it1mu.mongodb.net/memories?retryWrites=true&w=majority';
+
 const app = express();
 
 dotenv.config();
@@ -16,7 +16,7 @@ app.use(bodyParser.json({limit : "30mb", extended : true}));
 app.use(bodyParser.urlencoded({limit : "30mb", extended : true}));
 app.use(cors(
     {
-        origin:['http://localhost:3000'],
+        origin:['http://localhost:3000','https://nifty-wiles-2dd542.netlify.app/'],
         credentials:true
     },
     )); 
