@@ -4,24 +4,28 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 // import postRoutes from './routes/posts';
 import dotenv from 'dotenv';
-import postRoutes from './routes/posts.js'
+import postRoutes from './routes/posts.js';
+import userRoutes from './routes/users.js';
 
-app.use(cors(
-    {
-        origin:['http://localhost:3000','https://loving-poincare-56ab69.netlify.app/','https://stupefied-joliot-47927c.netlify.app/'],
-        credentials:true
-    },
-    )); 
+
 
 
 const app = express();
 
 dotenv.config();
 
+// app.use(cors(
+//     {
+//         origin:['http://localhost:3000','https://loving-poincare-56ab69.netlify.app/','https://stupefied-joliot-47927c.netlify.app/'],
+//         credentials:true
+//     },
+//     )); 
+app.use(cors());
 app.use(bodyParser.json({limit : "30mb", extended : true}));
 app.use(bodyParser.urlencoded({limit : "30mb", extended : true}));
 
 app.use('/posts', postRoutes);
+app.use('/user',userRoutes);
 
 // const CONNECTION_URL=process.env.CONNECTION_URL;
 
